@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     sh "chmod +x gradlew"
-                    sh "./gradlew build --no-tests"
+                    sh "./gradlew build --exclude-task test"
                 }
             }
         }
