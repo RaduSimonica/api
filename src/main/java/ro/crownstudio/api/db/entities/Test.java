@@ -14,6 +14,8 @@ public class Test extends GenericEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String internalId;
+
     private String name;
 
     private String description;

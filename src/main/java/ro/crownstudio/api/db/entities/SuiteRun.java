@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "suite_run")
 @Getter
 @Setter
-public class SuiteRun extends GenericEntity{
+public class SuiteRun extends GenericEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

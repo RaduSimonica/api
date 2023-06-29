@@ -35,6 +35,14 @@ public class TestController {
         return ResponseEntity.ok(test);
     }
 
+    @GetMapping("/test")
+    public ResponseEntity<Test> getTestByInternalId(@RequestParam("internalId") String internalId) {
+        Test test = testRepository.findByInternalId(internalId)
+                .orElseThrow(() -> new ItemNotFoundException("Test with internal id %s was not found".formatted(internalId)));
+
+        return ResponseEntity.ok(test);
+    }
+
     @PostMapping("/test")
     public ResponseEntity<Test> createTest(@RequestBody Test test) {
         if (test.getName() == null || test.getName().isEmpty()) {
